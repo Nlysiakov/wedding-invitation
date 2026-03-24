@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    background-color: #cbb4b4;
+}
+
+img {
+    max-width: 100%; 
+    height: auto;     
+}
+
+
+
+.container{
+    max-width: 390px;
+    height: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+.hero{
+    position: relative;
+    width: 100%;
+    height: 852px;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-image: url(images/list1.png);
+
+}
+
+.content{
+    position: relative;
+    z-index: 2;
+    height: 852px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 7px;
+}
+
+
+.text-overlay{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    margin-bottom: 200px;
+    margin-top: 30px;
+}
+
+.dear1{
+    font-size: 64px;
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    margin-bottom: -22px;
+    margin-left: -80px;
+}
+.dear2{
+    font-size: 24px;
+    font-family: "Alegreya SC", serif;
+    transform: translateX(60px);
+    margin-left: 10px;
+}
+
+.text-overlay_2{
+    position: relative;
+    width: 100%;
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 85px;
+    gap: 10px;
+    color: #4A5047;
+}
+
+.intro-text{
+    font-family: "Alegreya SC", serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+}
+.intro-text::first-letter{
+    font-family: "Great Vibes", cursive;
+    font-size: 48px;
+    font-weight: 400;
+
+    
+    display: inline-block;
+    margin-top: 50px;
+    line-height: 0.4;
+}
+
+
+.invite-text{
+    font-family: "Alegreya SC", serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 14px;
+}
+
+.date-text{
+    font-family: "Alegreya SC", serif;
+    font-size: 48px;
+    font-weight: 500;
+    margin-top: 25px;
+    color: #2E3F28;
+}
+
+.time-text{
+    font-family: "Alegreya SC", serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.age-text{
+    font-family: "Alegreya SC", serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: -5px;
+}
+
+
+.star_1{
+    position: absolute;
+    background-image: url("images/Star.png");
+    top: 350px;
+    width: 35px;
+    height: 35px;
+    z-index: 3;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+.timer-title{
+    font-family: "Alegreya SC", serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #2E3F28;
+    text-align: center;
+}
+
+.timer-section{
+    background-image: url("images/polusection.png");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    width: 100%;
+    height: 156px;
+
+}
+
+.timer-container {
+    text-align: center;
+    font-family: "Alegreya SC", serif;
+    color: #4A5047;
+}
+
+.timer-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    padding-top: 20px;
+}
+
+.timer-blocks {
+    display: flex;
+    justify-content: center;
+    gap: 30px;  
+}
+
+.timer-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+    font-weight: 400;
+}
+
+.timer-number {
+    font-family: "Alegreya SC", serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #2E3F28;
+    line-height: 0.5;
+    margin-bottom: 8px;
+}
+
+.timer-label {
+    font-family: "Alegreya SC", serif;
+    font-size: 14px;
+    color: #4A5047;
+    text-transform: lowercase; 
+}
+
+
+
+
+
+.program{
+    position: relative;
+    width: 100%;
+    height: 470px;
+
+    background-image: url("images/programsection.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    z-index: 2;
+}
+
+.vector{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    bottom: -60px;
+}
+
+.program-day-text{
+    font-family: "Great Vibes";
+    font-size: 40px;
+    font-weight: 400;
+    color: #2E3F28;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.program-time-text{
+    font-family: "Alegreya SC", serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #2E3F28;
+    margin-left: 40px;
+    line-height: 1.2;
+}
+
+.program-text1{
+    font-family: "Alegreya SC", serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #2E3F28;
+    margin-left: 3px;
+}
+
+.program-text2{
+    font-family: "Alegreya SC", serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #2E3F28;
+    white-space: nowrap;
+
+}
+.program-text3{
+    font-family: "Alegreya SC", serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #2E3F28;
+    margin-left: 18px;
+}
+
+.program-wishes-text{
+    font-family: "Alegreya SC", serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #2E3F28;
+    margin-left: 83px;
+}
+
+.program_section1{
+    margin-top: 40px;
+    margin-left: 20px;
+    line-height: 1;
+}
+.program_section2{
+    margin-top: 90px;
+    margin-left: 190px;
+    line-height: 1;
+}
+.program_section3{
+    margin-top: 55px;
+    margin-left: 40px;
+    line-height: 1;
+}
+
+.star_2{
+    position: absolute;
+    background-image: url("images/Star.png");
+    top: 0px;
+    width: 35px;
+    height: 35px;
+    z-index: 3;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+.location{
+    position: relative;
+    width: 100%;
+    height: 852px;
+
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-image: url("images/list2.png");
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.location-text{
+    text-align: center;
+    font-family: "Great Vibes", cursive;
+    font-size: 40px;
+    color: #4A5047;
+    padding: 60px;
+    white-space: nowrap;
+}
+
+.adress-text{
+    font-family: "Alegreya SC", serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #4A5047;
+
+    margin-top: 440px;
+}
+
+
+.btn1{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #D9D9D980;
+    width: 180px;
+    height: 34px;
+    border-radius: 16px;
+    border: 1px solid #2E3F2861;
+    font-family: "Alegreya SC", serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #445040;
+    margin-top: 27px;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 5px;
+    transition: all 0.1s ease;
+}
+
+.btn1:active {
+    background-color: #B0B0B0;
+}
+
+.star_3{
+    position: absolute;
+    background-image: url("images/Star.png");
+    top: 740px;
+    width: 35px;
+    height: 35px;
+    z-index: 3;
+
+    left: 50%; /* По центру */
+    transform: translateX(-50%);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+.dress-code{
+    position: relative;
+    width: 100%;
+    height: 515px;
+
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-image: url("images/list3.png");
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.persons{
+    width: 334px;
+    height: auto;
+    margin-top: 15px;
+}
+
+.dress-code_text{
+    font-family: "Great Vibes", cursive;
+    font-size: 40px;
+    font-weight: 400;
+    color: #4A5047;
+    margin-top: -30px;
+}
+
+.your-colors_text{
+    font-family: "Alegreya SC", serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #4A5047;
+    margin-top: 30px;
+    padding: 0 20px;
+    line-height: 1.2;
+}
+
+.dont-black-please{
+    font-family: "Alegreya SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: #4A5047; 
+    margin-top: 30px;
+    padding: 0 60px;
+}
+
+
+
+
+
+.wishes{
+    position: relative;
+    width: 100%;
+    height: 852px;
+
+    background-image: url("images/list4.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}  
+
+.star_4{
+    position: absolute;
+    background-image: url("images/Star.png");
+    top: -65px;
+    width: 35px;
+    height: 35px;
+    z-index: 3;
+
+    left: 50%; /* По центру */
+    transform: translateX(-50%);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.wishes-text{
+    font-family: "Great Vibes", cursive;
+    font-size: 40px;
+    font-weight: 400;
+    color: #4A5047;
+    margin-top: -15px;
+}
+
+.star_5{
+    position: absolute;
+    background-image: url("images/Star.png");
+    width: 35px;
+    height: 35px;
+    z-index: 3;
+
+    left: 50%; /* По центру */
+    transform: translateX(-50%);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+}
+
+.dont-give-flowers{
+    font-family: "Alegreya SC", serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #4A5047; 
+    margin-top: 60px;
+    padding: 0 30px;
+    line-height: 1.2;
+}
+
+.star_6{
+    position: absolute;
+    background-image: url("images/Star.png");
+    width: 35px;
+    height: 35px;
+    z-index: 3;
+
+    left: 50%; /* По центру */
+    transform: translateX(-50%);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 14px;
+}
+
+.dont-gorko{
+    font-family: "Alegreya SC", serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #4A5047; 
+    margin-top: 60px;
+    padding: 0 30px;
+    line-height: 1.2;
+}
+
+.accept-invite{
+    font-family: "Alegreya SC", serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #4A5047; 
+    margin-top: 300px;
+    padding: 0 30px;
+    line-height: 0.9;
+}
+.accept-invite::first-letter{
+    font-family: "Great Vibes", cursive;
+    font-size: 40px;
+    font-weight: 400;
+    color: #4A5047;
+    line-height: 0.6;
+}
+
+
+
+
+
+.last-section{
+    height: 450px;
+    width: 100%;
+
+    background-image: url("images/list5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    position: relative;
+}
+
+.last-section-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+}
+
+.zhuzhi{
+    position: absolute;
+    width: 396px;
+    height: 274px;
+
+    bottom: 0;
+}
+
+/* .to-chat{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #D9D9D980;
+
+    margin: 0 auto;
+
+    width: 180px;
+    height: 34px;
+    border-radius: 16px;
+    border: 1px solid #2E3F2861;
+
+    font-family: "Alegreya SC", serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #445040;
+
+    transform: translateY(-30px);
+
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 5px;
+} */
+.to-chat{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #D9D9D980;
+    margin: 0 auto;
+    width: 180px;
+    height: 34px;
+    border-radius: 16px;
+    border: 1px solid #2E3F2861;
+    font-family: "Alegreya SC", serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #445040;
+    transform: translateY(-30px);
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 5px;
+    transition: all 0.1s ease; /* Добавили плавность */
+}
+
+.to-chat:active {
+    background-color: #B0B0B0; /* Эффект нажатия */
+}
+
+.star_7{
+    position: absolute;
+    background-image: url("images/Star.png");
+    width: 35px;
+    height: 35px;
+    z-index: 3;
+
+    left: 50%; /* По центру */
+    transform: translateX(-50%);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+}
+
+.curved-text-container{
+    
+    margin-top: 50px;
+}
+
+
+
+@media (max-width:365px){
+    .dear1{
+        font-size: 56px;
+        margin-left: -35px;
+    }
+    .dear2{
+        font-size: 18px;
+        margin-top: 5px;
+    }
+
+    .intro-text{
+        font-size: 18px;
+    }
+    .intro-text::first-letter{
+        font-size: 44px;
+    }
+
+    .invite-text{
+        font-size: 22px;
+    }
+
+
+    .program_section1{
+        margin-top: 70px;
+    }
+    .program_section2{
+        margin-top: 70px;
+        transform: translateX(-20px);
+    }
+
+    .location-text{
+        font-size: 36px;
+        margin-top: 20px;
+    }
+
+    .adress-text{
+        font-size: 20px;
+    }
+
+    .accept-invite{
+        font-size: 16px;
+    }
+    .accept-invite::first-letter{
+        font-size: 34px;
+    }
+
+    .to-chat{
+        margin-top: 20px;
+    }
+}
+
+</style>
+
+
+<body>   
+    <div class="container">
+        <section class="hero">
+            <div class="content">
+                
+                <div class="text-overlay">
+                    <p class="dear1">Дорогие</p>
+                    <p class="dear2">Родные и близкие!</p>
+                </div>
+
+                
+                <div class="text-overlay_2">
+                    <p class="intro-text">Один из дней этого лета станет самым важным в нашей жизни, и мы хотим провести его вместе с вами.</p>
+                    <p class="invite-text">Приглашаем вас на нашу свадьбу, которая состоится:</p>
+                    <p class="date-text">2 июля 2026</p>
+                    <p class="time-text">Сбор гостей: 15:00</p>
+                    <p class="age-text">Вход 18+</p>
+
+                    <div class="star_1"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="timer-section">
+            <div class="timer-title">До свадьбы осталось:</div>
+    
+    <div class="timer-blocks">
+        <div class="timer-block">
+            <div class="timer-number" id="days">00</div>
+            <div class="timer-label">дней</div>
+        </div>
+        
+        <div class="timer-block">
+            <div class="timer-number" id="hours">00</div>
+            <div class="timer-label">часов</div>
+        </div>
+        
+        <div class="timer-block">
+            <div class="timer-number" id="minutes">00</div>
+            <div class="timer-label">минут</div>
+        </div>
+    </div>
+        </section>
+
+        <section class="program">
+
+            <div class="star_2"></div>
+
+            <div class="vector">
+                <img src="images/vector.png" alt="">
+            </div>
+
+                    <div class="program-day-text">Программа дня</div>
+
+                <div class="program_section1">
+                    <div class="program-time-text">12:40</div>
+                    <div class="program-text1">Сбор гостей у ЗАГСА</div>
+                    <div class="program-wishes-text">(по желанию)</div>
+                </div>
+
+                <div class="program_section2">
+                    <div class="program-time-text">15:00</div>
+                    <div class="program-text2">Основной сбор гостей</div>
+                </div>
+
+                <div class="program_section3">
+                    <div class="program-time-text">16:00</div>
+                    <div class="program-text3">Начало банкета</div>
+            </div>
+
+        </section>
+
+
+        <section class="location">
+            <div class="location_content">
+                <p class="location-text">Место проведения</p>
+                <p class="adress-text">Адрес: улица Свободы, 78Бс1</p>
+                
+                <a href="https://yandex.ru/maps/?pt=37.436409,55.875738&z=17&l=map" 
+            target="_blank" 
+            class="btn1">
+            Посмотреть на картах
+        </a>
+            <div class="star_3"></div>
+            </div>
+        </section>
+
+        <section class="dress-code">
+            <div class="dress-code_content">
+                <p class="dress-code_text">Дресс-код</p>
+                <p class="your-colors_text">Мы будем рады если своими образами вы поддержите стилистику праздника и используете в своих нарядах предложенные цвета:</p>
+                <img class="persons" src="images/persons.png" alt="">
+                <p class="dont-black-please">Дорогие гости, воздержитесь, пожалуйста, от белых и черных нарядов.</p>
+            </div>
+        </section>
+
+        <section class="wishes">
+            <div class="wishes-content">
+                <div class="star_4"></div>
+                <p class="wishes-text">Пожелания</p>
+                <div class="star_5"></div>
+                <p class="dont-give-flowers">Свои теплые слова и пожелания приносите в сердцах, а подарки в конвертах. Не дарите нам цветы. На следующий день мы уедем в отпуск и не успеем ими насладиться.</p>
+                <div class="star_6"></div>
+                <p class="dont-gorko">Будем благодарны если вы воздержитесь от криков “Горько!” на празднике. Для нас поцелуй это выражение чувств, он не может быть по заказу.</p>
+                <p class="accept-invite">Если  вы принимаете приглашение и точно придете на свадьбу, рады видеть в общем чате:</p>
+            </div>
+        </section>
+
+        <section class="last-section">
+            <div class="last-section-content">
+
+                <a href="https://t.me/+XBA9zqyGpttmMWMy" 
+            target="_blank" 
+            class="to-chat">
+            Перейти в чат
+        </a>
+
+                <div class="star_7"></div>
+
+            <div class="curved-text-container">
+                <svg width="100%" height="120" viewBox="0 0 350 120">
+                    <path id="weddingCurve" d="M 30,80 Q 175,40 320,80" fill="none"/>
+                    <text fill="#2E3F28" font-family="Great Vibes, cursive" font-size="32">
+                        <textPath href="#weddingCurve" startOffset="50%" text-anchor="middle">
+                            Мы будем вас очень ждать !
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+                <img class="zhuzhi" src="images/imageskids.png" alt="">
+            </div>
+        </section>
+    </div> 
+
+<script>
+
+function updateTimer() {
+    const targetDate = new Date(2026, 6, 2, 15, 0, 0).getTime(); 
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference < 0) {
+        document.getElementById('days').innerHTML = '00';
+        document.getElementById('hours').innerHTML = '00';
+        document.getElementById('minutes').innerHTML = '00';
+        return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById('days').innerHTML = days < 10 ? '0' + days : days;
+    document.getElementById('hours').innerHTML = hours < 10 ? '0' + hours : hours;
+    document.getElementById('minutes').innerHTML = minutes < 10 ? '0' + minutes : minutes;
+}
+
+updateTimer();
+setInterval(updateTimer, 60000);
+</script>
+
+</body>
+</html>
